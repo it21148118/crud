@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/user_item_bg"
+    android:background="@color/orange_new"
     android:padding="4sp"
     android:layout_margin="4sp"
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textName"
+        android:id="@+id/textNamef"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="18sp"
         android:text="User name"/>
 
     <TextView
-        android:id="@+id/textEmail"
+        android:id="@+id/textPricef"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="18sp"
-        android:text="User email"/>
+        android:text="Price"/>
 
     <TextView
-        android:id="@+id/textCountry"
+        android:id="@+id/textDescriptionf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="18sp"
-        android:text="User country"/>
+        android:text="Description"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,24 +42,28 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonDelete"
+            android:id="@+id/buttonDeletef"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_height="48dp"
             android:layout_margin="3dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_red_light"
             android:text="DELETE"
-            android:textColor="@android:color/white"/>
+            android:textColor="#212121"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonUpdate"
+            android:id="@+id/buttonUpdatef"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_height="48dp"
             android:layout_margin="3dp"
-            android:background="@android:color/holo_blue_dark"
+            android:layout_weight="1"
+            android:background="@color/orange"
             android:text="UPDATE"
-            android:textColor="@android:color/white"/>
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#4E342E" />
 
     </LinearLayout>
 </LinearLayout>

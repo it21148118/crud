@@ -27,37 +27,37 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityF extends AppCompatActivity {
 
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReferencef;
 
-    RecyclerView recyclerView;
-    ArrayList<UsersItem> usersItemArrayList;
-    UsersRecyclerAdapter adapter;
+    RecyclerView recyclerViewf;
+    ArrayList<FoodItem> foodItemArrayList;
+    FoodRecyclerAdapter adapterf;
 
-    Button buttonAdd;
+    Button buttonAddf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainf);
         FirebaseDatabase.getInstance().setPersistenceEnabled(true); // work offline
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReferencef = FirebaseDatabase.getInstance().getReference();
 
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewf = findViewById(R.id.recyclerViewf);
+        recyclerViewf.setHasFixedSize(true);
+        recyclerViewf.setLayoutManager(new LinearLayoutManager(this));
 
-        usersItemArrayList = new ArrayList<>();
+        foodItemArrayList = new ArrayList<>();
 
-        buttonAdd = findViewById(R.id.buttonAdd);
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
+        buttonAddf = findViewById(R.id.buttonAddf);
+        buttonAddf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ViewDialogAdd viewDialogAdd = new ViewDialogAdd();
-                viewDialogAdd.showDialog(MainActivity.this);
+                ViewDialogAddf viewDialogAddf = new ViewDialogAddf();
+                viewDialogAddf.showDialog(MainActivityF.this);
             }
         });
 
@@ -66,18 +66,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void readData() {
 
-        databaseReference.child("USERS").orderByChild("userName").addValueEventListener(new ValueEventListener() {
+        databaseReferencef.child("Food").orderByChild("foodName").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                usersItemArrayList.clear();
+                foodItemArrayList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    UsersItem users = dataSnapshot.getValue(UsersItem.class);
-                    usersItemArrayList.add(users);
+                    FoodItem foodItem = dataSnapshot.getValue(FoodItem.class);
+                    foodItemArrayList.add(foodItem);
                 }
-                adapter = new UsersRecyclerAdapter(MainActivity.this, usersItemArrayList);
-                recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                adapterf = new FoodRecyclerAdapter(MainActivityF.this, foodItemArrayList);
+                recyclerViewf.setAdapter(adapterf);
+                adapterf.notifyDataSetChanged();
             }
 
             @Override
@@ -85,44 +85,43 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
-    public class ViewDialogAdd {
+    public class ViewDialogAddf {
         public void showDialog(Context context) {
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.alert_dialog_add_new_user);
+            dialog.setContentView(R.layout.activity_dialog_add_new_item);
 
-            EditText textName = dialog.findViewById(R.id.textName);
-            EditText textEmail = dialog.findViewById(R.id.textEmail);
-            EditText textCountry = dialog.findViewById(R.id.textCountry);
+            EditText textNamef = dialog.findViewById(R.id.textNamef);
+            EditText textPricef = dialog.findViewById(R.id.textPricef);
+            EditText textDescriptionf= dialog.findViewById(R.id.textDescriptionf);
 
 
-            Button buttonAdd = dialog.findViewById(R.id.buttonAdd);
-            Button buttonCancel = dialog.findViewById(R.id.buttonCancel);
+            Button buttonAddf = dialog.findViewById(R.id.buttonAddf);
+            Button buttonCancelf = dialog.findViewById(R.id.buttonCancelf);
 
-            buttonAdd.setText("ADD");
-            buttonCancel.setOnClickListener(new View.OnClickListener() {
+            buttonAddf.setText("ADD");
+            buttonCancelf.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
                 }
             });
 
-            buttonAdd.setOnClickListener(new View.OnClickListener() {
+            buttonAddf.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String id = "user" + new Date().getTime();
-                    String name = textName.getText().toString();
-                    String email = textEmail.getText().toString();
-                    String country = textCountry.getText().toString();
+                    String id = "food" + new Date().getTime();
+                    String name = textNamef.getText().toString();
+                    String price = textPricef.getText().toString();
+                    String description = textDescriptionf.getText().toString();
 
-                    if (name.isEmpty() || email.isEmpty() || country.isEmpty()) {
+                    if (name.isEmpty() || price.isEmpty() || description.isEmpty()) {
                         Toast.makeText(context, "Please Enter All data...", Toast.LENGTH_SHORT).show();
                     } else {
-                        databaseReference.child("USERS").child(id).setValue(new UsersItem(id, name, email, country));
+                        databaseReferencef.child("Food").child(id).setValue(new FoodItem(id, name, price, description));
                         Toast.makeText(context, "DONE!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }

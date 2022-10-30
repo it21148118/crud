@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
@@ -11,66 +12,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/white"
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/textName"
+            android:id="@+id/textNamef"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_margin="3dp"
-            android:background="@drawable/edittext_bg"
+            android:background="@color/lightorange"
             android:gravity="center"
-            android:hint="User name"
+            android:hint="Enter Name"
             android:padding="5dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/textEmail"
+            android:id="@+id/textPricef"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_margin="3dp"
-            android:background="@drawable/edittext_bg"
+            android:background="@color/lightorange"
             android:gravity="center"
-            android:hint="User email"
+            android:hint="Enter Price"
             android:padding="5dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/textCountry"
+            android:id="@+id/textDescriptionf"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_margin="3dp"
-            android:background="@drawable/edittext_bg"
+            android:background="@color/lightorange"
             android:gravity="center"
-            android:hint="User Country"
+            android:hint="Enter Description"
             android:padding="5dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonAdd"
+            android:id="@+id/buttonAddf"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="15sp"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/orange"
             android:text="Add"
-            android:textColor="@android:color/white"
+            android:textColor="#455A64"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonCancel"
+            android:id="@+id/buttonCancelf"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_marginTop="5dp"

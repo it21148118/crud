@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/lightorange"
+    android:padding="4sp"
+    android:layout_margin="4sp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textNamef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="User name"/>
+
+    <TextView
+        android:id="@+id/textPricef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="Price"/>
+
+    <TextView
+        android:id="@+id/textDescriptionf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="Description"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="4sp"
+        android:padding="4sp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonDeletef"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@android:color/holo_red_light"
+            android:text="DELETE"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonUpdatef"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:background="@color/orange"
+            android:text="UPDATE"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+</LinearLayout>

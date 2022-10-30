@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.codingwithzo.realtimedbaddreadupdatedelete">
 
     <application
@@ -10,13 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealTimeDBAddReadUpdateDelete">
         <activity
-            android:name=".MainActivity"
+            android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FoodItem"
+            android:exported="false"
+            tools:ignore="Instantiatable">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".MainActivityF"
+            android:exported="false">
+
         </activity>
     </application>
 
